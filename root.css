@@ -1,0 +1,18 @@
+:root {
+    --v: calc(.5vw + .5vh);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+button {
+    cursor: pointer;
+}

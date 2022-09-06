@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A fun game of snakes and ladders to play with your friends and family">
+
+    <title>Snakes & Ladders</title>
+
+    <link rel="stylesheet" type="text/css" href="Style/common.css">
+    <link rel="stylesheet" type="text/css" href="Style/home-screen.css">
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+
+    <script src="./database.js"></script>
+
+    <script src="Scripts/app.js"></script>
+    <script src="Scripts/screen.js"></script>
+</head>
+
+<body>
+    <link rel="stylesheet" type="text/css" href="root.css">
+    <link rel="stylesheet" type="text/css" href="Style/login-screen.css">
+    <link rel="stylesheet" type="text/css" href="Style/game-start-screen.css">
+    <link rel="stylesheet" type="text/css" href="Style/create-room-screen.css">
+
+    <div id="transition" class="screenChangeTransition"></div>
+
+    <div id="homeScreen">
+        <div class="login-area" onclick="openLoginScreen()">
+            <img src="Assets/user.svg" alt="login">
+            <span class="username">Login</span>
+        </div>
+        <header>Snakes & Ladders</header>
+        <button class="play-btn" onclick="playBtnClicked()">Play</button>
+        <div class="footer">
+            <div class="credits">Made by Harsh Uppal</div>
+        </div>
+    </div>
+    <div id="loginScreen">
+        <header>Login</header>
+        <input type="text" class="username-input">
+        <input type="text" class="password-input">
+        <button class="back-btn" onclick="ScreenManager.goBack()">
+            <img src="Assets/back.svg" alt="Go Back">
+        </button>
+    </div>
+    <div id="gameStartScreen" class="game-start-screen">
+        <header>Start Game</header>
+        <div class="btn-wrapper">
+            <div class="input-btn">
+                <button onclick="joinRoom()">
+                    <span>Join Room</span>
+                </button>
+                <input type="text" id="joinRoomId" placeholder="Room ID">
+            </div>
+            <button onclick="quickJoin()">
+                <span>Quick Join</span>
+            </button>
+            <div class="input-btn">
+                <button onclick="createRoom()">
+                    <span>Create Room</span>
+                </button>
+                <input type="text" id="createRoomId" placeholder="Room ID">
+            </div>
+        </div>
+        <button class="back-btn" onclick="ScreenManager.goBack()">
+            <img src="Assets/back.svg" alt="Go Back">
+        </button>
+        <dialog id="passwordModal" class="password-modal">
+            <button class="close-btn">
+                <img src="Assets/close.svg" alt="Close">
+            </button>
+            <label for="password">Enter room password:</label>
+            <input type="text" name="password">
+            <button class="join-btn">Join Room</button>
+        </dialog>
+    </div>
+    <div id="createRoomScreen">
+        <button class="back-btn" onclick="ScreenManager.goBack()">
+            <img src="Assets/back.svg" alt="Go Back">
+        </button>
+        <header>Create Room</header>
+        <form action="/game" method="get" target="_self" class="room-details">
+            <input name="type" value="host" type="hidden">
+            <div>
+                <label for="roomId">Room ID</label>
+                <input id="roomIdInput" name="roomId" type="text" readonly>
+            </div>
+            <div>
+                <label for="maxPlayers">Max Players</label>
+                <input id="maxPlayersInput" name="maxPlayers" type="number" min="2" max="10">
+            </div>
+            <div>
+                <label for="visibility">Visibility</label>
+                <select name="visibility" id="roomVisibility">
+                    <option value="public">Public</option>
+                    <option value="private">Private</option>
+                </select>
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="text" name="password" id="roomPassword">
+            </div>
+            <div>
+                <label for="seed">Seed</label>
+                <input type="number" name="seed" id="roomSeed">
+            </div>
+            <input type="submit" class="submit-btn">
+        </form>
+    </div>
+</body>
+
+</html>

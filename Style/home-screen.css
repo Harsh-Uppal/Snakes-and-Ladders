@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@700&family=Patrick+Hand&family=Quicksand:wght@300&display=swap');
+
+.login-area {
+    position: absolute;
+    right: calc(2 * var(--v));
+    top: calc(2 * var(--v));
+    display: flex;
+    flex-direction: column;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    font-family: 'Patrick Hand';
+    font-size: calc(3 * var(--v));
+}
+
+.login-area img {
+    width: calc(6 * var(--v));
+}
+
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 20%;
+    border-radius: 1000rem;
+    border: none;
+    background-color: #EEE;
+    box-shadow: 8px 4px 5px darkgray;
+    transition: .2s;
+    font-size: calc(var(--v) * 5);
+    font-family: 'Oleo Script Swash Caps';
+    color: rgb(202, 111, 0);
+}
+
+.play-btn:hover {
+    box-shadow: 11px 7px 5px darkgray;
+}
+
+.play-btn:active {
+    margin-left: 11px;
+    margin-top: 7px;
+    box-shadow: none;
+}
+
+.credits {
+    position: absolute;
+    bottom: calc(var(--v) * 2);
+    right: calc(var(--v) * 2);
+    color: white;
+    font-size: calc(var(--v) * 2.5);
+    font-family: 'Patrick Hand';
+}

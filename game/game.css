@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&family=Silkscreen&display=swap');
+
+body {
+    display: flex;
+}
+
+.playerList {
+    width: 20vw;
+    height: 100vh;
+    background-color: darksalmon;
+}
+
+.playerList>* {
+    display: flex;
+    padding: var(--v);
+    border: 1px solid white;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.playerList * {
+    font-size: calc(2 * var(--v));
+    font-family: 'DynaPuff';
+}
+
+.playerList .color-display {
+    border-radius: 100%;
+    width: calc(3 * var(--v));
+    height: calc(3 * var(--v));
+}

@@ -1,0 +1,33 @@
+.room-details {
+    max-width: 40rem;
+    width: 80vw;
+
+}
+
+.room-details>* {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: calc(2 * var(--v));
+}
+
+.room-details label {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    font-size: calc(2.5 * var(--v));
+}
+
+.submit-btn {
+    position: absolute;
+    bottom: 5vh;
+    left: 50%;
+    transform: translate(-50%, 0);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(2 * var(--v));
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 20vw;
+    height: 10vh;
+}
